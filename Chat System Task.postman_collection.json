@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "cce33366-c84b-48eb-9866-5fa8b81d0840",
+		"name": "Chat System Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Parth077\",\r\n    \"phone_number\": \"+918128184044\",\r\n    \"password\": \"Sales.123\",\r\n    \"first_name\": \"Aniket\",\r\n    \"last_name\": \"Gajjar\",\r\n    \"email\": \"pkomal852@gmail.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send_OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"+918128184044\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/send_otp/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"send_otp",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\":\"+918128184044\",\r\n    \"otp\":\"709687\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 6b625d5ac9da12abe43b93098f05f8433f5b83f5",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e3812f6697004d2bc6a221e2c4e3541462b9776e",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile_picture",
+							"type": "file",
+							"src": "/C:/Users/pragn/Pictures/image.png",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Raval",
+							"type": "default"
+						},
+						{
+							"key": "first_name",
+							"value": "Pragnesh",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e3812f6697004d2bc6a221e2c4e3541462b9776e",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sender",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "receiver",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "content",
+							"value": "hello aniket",
+							"type": "default"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/send/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inbox Messages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 6b625d5ac9da12abe43b93098f05f8433f5b83f5",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/inbox/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"inbox",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "User1_Token",
+			"value": "Token 6b625d5ac9da12abe43b93098f05f8433f5b83f5",
+			"type": "default"
+		},
+		{
+			"key": "User2_Token",
+			"value": "Token 6b625d5ac9da12abe43b93098f05f8433f5b83f5",
+			"type": "default"
+		}
+	]
+}
